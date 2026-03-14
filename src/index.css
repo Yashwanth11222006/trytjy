@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-base: #050f1a;
+  --color-navy-card: #0a1a2a;
+  --color-green-neon: #00e676;
+  --color-teal-accent: #00bfa5;
+  --color-blue-text: #cce8ff;
+  --color-blue-muted: #6a9bbf;
+  --color-navy-border: #1a3050;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-navy-base);
+    color: var(--color-blue-text);
+    font-family: var(--font-sans);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  @keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes scan-line {
+    0%, 100% { top: 0; opacity: 0; }
+    5%, 95% { opacity: 1; }
+    50% { top: 100%; }
+  }
+
+  @keyframes scan-line-h {
+    0%, 100% { left: 0; opacity: 0; }
+    20%, 80% { opacity: 1; }
+    50% { left: 100%; }
+  }
+}
